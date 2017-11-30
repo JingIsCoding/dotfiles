@@ -13,20 +13,24 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+iabbrev <// </<C-X><C-O>
+imap (( ()<Esc>i
+imap {{ {<cr><cr>}<Esc>ki<Tab>
+
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
 
-inoremap jj <ESC>
 set selection=exclusive
+
+nmap <CR> O<Esc>
 
 " Fast saving
 nmap <leader>w :w!<cr>
-
 " Fast quit
 nmap <leader>q :q!<cr>
-
+nmap <leader>f :FZF<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -42,8 +46,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
+Plugin 'moll/vim-node'
 Plugin 'scrooloose/nerdtree'
-Plugin 'BurntSushi/ripgrep'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'powerline/powerline'
 Plugin 'vim-airline/vim-airline'
@@ -240,7 +245,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bb :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
@@ -254,7 +259,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>t<leader> :tabnext<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
