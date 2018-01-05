@@ -13,6 +13,7 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" brakets
 iabbrev <// </<C-X><C-O>
 imap (( ()<Esc>i
 imap {{ {<cr><cr>}<Esc>ki<Tab>
@@ -31,6 +32,8 @@ nmap <leader>w :w!<cr>
 " Fast quit
 nmap <leader>q :q!<cr>
 nmap <leader>f :FZF<cr>
+nmap <leader>a :Ack!<Space>
+inoremap ;; <C-o>A;<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -48,7 +51,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-node'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jremmen/vim-ripgrep'
+Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf'
 Plugin 'powerline/powerline'
 Plugin 'vim-airline/vim-airline'
